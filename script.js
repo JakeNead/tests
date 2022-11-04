@@ -1,14 +1,27 @@
-// Find the sum of the salaries
+//Create a function that multiplies all numeric property values of an object by 2.
 
-let salaries = {
-  John: 100,
-  Ann: 160,
-  Pete: 130
+
+// before the call
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+// after the call
+menu = {
+  width: 400,
+  height: 600,
+  title: "My menu"
+};
+
+function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if (typeof key === 'number') {
+      obj[key] *= 2
+    }
+  }
+  return menu
 }
 
-let sum = 0
-for (let key in salaries) {
-  sum += salaries[key]
-}
-
-console.log(sum)
+console.log(multiplyNumeric(menu))
