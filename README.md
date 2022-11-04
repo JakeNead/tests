@@ -1,2 +1,2 @@
 # tests
-These are snippets of my code as I explore new concepts. 
+These are snippets of code I'm using to explore new concepts. 
