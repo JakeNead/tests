@@ -1,9 +1,12 @@
-// Check to see if a string contains the same number of 'x's and 'o's
+// Given a list of numbers find the only odd or even number
 
-function XO(str) {
-  let chars = str.toLowerCase().split('')
-  return (chars.filter(x => x === 'x').length === chars.filter(x => x === 'o').length)
-} 
-  
+function findOutlier(int){
+   return int.filter(n => n%2 === 0).length > int.filter(n => n%2 !== 0).length ? odd: even;
+ }
 
-console.log(XO('Xxoxo82o%'))
+ function findOutlier(int){
+  let even = int.filter( n => n%2 === 0)
+  let odd = int.filter(n => n%2 !== 0)
+   return +(even.length > odd.length ? odd: even)
+ }
+ 
