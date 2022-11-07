@@ -1,12 +1,21 @@
-// Given a list of numbers find the only odd or even number
+//Change all but the last four numbers to '#'
 
-function findOutlier(int){
-   return int.filter(n => n%2 === 0).length > int.filter(n => n%2 !== 0).length ? odd: even;
- }
+function maskify(cc) {
+  if (cc.length <= 4) {
+    return cc;
+  } else {
+    for (let i=0; i<cc.length-4; i++) {
+      cc = cc.replace(cc[i], '#')
+    }
+  }
+  return cc
+}
 
- function findOutlier(int){
-  let even = int.filter( n => n%2 === 0)
-  let odd = int.filter(n => n%2 !== 0)
-   return +(even.length > odd.length ? odd: even)
- }
- 
+console.log(maskify('123'))
+console.log(maskify('23985749864'))
+
+//cleaner solution 
+
+// function maskify(cc) {
+//   return cc.slice(-4).padStart(cc.length, '#')
+// }
