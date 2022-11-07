@@ -1,21 +1,36 @@
-//Change all but the last four numbers to '#'
+function isValidWalk(walk) {
+  let x = 0
+  let y = 0
 
-function maskify(cc) {
-  if (cc.length <= 4) {
-    return cc;
+  if (walk.length < 10 || walk.length > 10) {
+    return false
   } else {
-    for (let i=0; i<cc.length-4; i++) {
-      cc = cc.replace(cc[i], '#')
+    for (let i=0; i<walk.length; i++) {
+      console.log(`${[i]}) x - ${x}, y -  ${y}`)
+      if (walk[i] ==='n') {
+        y++; 
+    } else if (walk[i] ==='s') {
+        y--;   
+    } else if (walk[i] ==='e') {
+        x--;   
+    } else if (walk[i] ==='w') {
+        x++; 
     }
   }
-  return cc
+}
+return (x === 0 && y === 0)
+
 }
 
-console.log(maskify('123'))
-console.log(maskify('23985749864'))
+console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
 
-//cleaner solution 
+// Cleaner version
 
-// function maskify(cc) {
-//   return cc.slice(-4).padStart(cc.length, '#')
-// }
+function isValidWalk(walk) {
+  const north = walk.filter(item => { return item === "n" }).length;
+  const south = walk.filter(item => { return item === "s" }).length;
+  const east = walk.filter(item => { return item === "e" }).length;
+  const west = walk.filter(item => { return item === "w" }).length;
+  
+  return walk.length === 10 && north === south && east === west;
+}
