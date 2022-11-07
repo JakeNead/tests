@@ -9,28 +9,27 @@ function isValidWalk(walk) {
       console.log(`${[i]}) x - ${x}, y -  ${y}`)
       if (walk[i] ==='n') {
         y++; 
-    } else if (walk[i] ==='s') {
-        y--;   
-    } else if (walk[i] ==='e') {
-        x--;   
-    } else if (walk[i] ==='w') {
-        x++; 
+      } else if (walk[i] ==='s') {
+          y--;   
+      } else if (walk[i] ==='e') {
+          x--;   
+      } else if (walk[i] ==='w') {
+          x++; 
+      }
     }
   }
+  return (x === 0 && y === 0)
 }
-return (x === 0 && y === 0)
-
-}
-
-console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
 
 // Cleaner version
 
 function isValidWalk(walk) {
-  const north = walk.filter(item => { return item === "n" }).length;
-  const south = walk.filter(item => { return item === "s" }).length;
-  const east = walk.filter(item => { return item === "e" }).length;
-  const west = walk.filter(item => { return item === "w" }).length;
+  const n = walk.filter(item => {item === "n" }).length;
+  const s = walk.filter(item => {item === "s" }).length;
+  const e = walk.filter(item => {item === "e" }).length;
+  const w = walk.filter(item => {item === "w" }).length;
   
-  return walk.length === 10 && north === south && east === west;
+  return walk.length === 10 && n === s && e === w;
 }
+
+console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
