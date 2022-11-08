@@ -1,35 +1,25 @@
-function isValidWalk(walk) {
-  let x = 0
-  let y = 0
+// My first attempt at creating a function to check palindromes
 
-  if (walk.length < 10 || walk.length > 10) {
-    return false
-  } else {
-    for (let i=0; i<walk.length; i++) {
-      console.log(`${[i]}) x - ${x}, y -  ${y}`)
-      if (walk[i] ==='n') {
-        y++; 
-      } else if (walk[i] ==='s') {
-          y--;   
-      } else if (walk[i] ==='e') {
-          x--;   
-      } else if (walk[i] ==='w') {
-          x++; 
-      }
-    }
-  }
-  return (x === 0 && y === 0)
-}
-
-// Cleaner version
-
-function isValidWalk(walk) {
-  const n = walk.filter(item => {item === "n" }).length;
-  const s = walk.filter(item => {item === "s" }).length;
-  const e = walk.filter(item => {item === "e" }).length;
-  const w = walk.filter(item => {item === "w" }).length;
+const palindromes = function (string) {
+  let str = string.toLowerCase().split('').filter(a => a.toUpperCase() !== a.toLowerCase())
   
-  return walk.length === 10 && n === s && e === w;
-}
+  let start = 0
+  let end = str.length -1
+  
+  for (let i=0; i<str.length; i++) {
+    if (start >= end) {
+      break
+    } else if (str[start] !== str[end]) {
+      return false
+    }
+    start++
+    end--
+    }
+    return true
+  }
 
-console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
+
+  // this is a far better function
+const isPalindrome = (x) => {
+  return x.split("").reverse().join("").toLowerCase() === x.toLowerCase() ? true : false
+}
