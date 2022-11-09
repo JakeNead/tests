@@ -1,25 +1,20 @@
 // My first attempt at creating a function to check palindromes
 
-const palindromes = function (string) {
-  let str = string.toLowerCase().split('').filter(a => a.toUpperCase() !== a.toLowerCase())
-  
-  let start = 0
-  let end = str.length -1
-  
-  for (let i=0; i<str.length; i++) {
-    if (start >= end) {
-      break
-    } else if (str[start] !== str[end]) {
-      return false
-    }
-    start++
-    end--
-    }
-    return true
+const fibonacci = function(n) {
+  let a = 0
+  let b = 1
+  if (n < 1) {
+      return n
+  } else {
+      for (let i=0; i< +n; i++) {
+        i % 2 === 0 ? b = a+b : a = a+b
+      }
+    return a > b ? a : b;
   }
+};
+console.log(fibonacci(4))
+console.log(fibonacci(6))
+console.log(fibonacci(25))
 
 
   // this is a far better function
-const isPalindrome = (x) => {
-  return x.split("").reverse().join("").toLowerCase() === x.toLowerCase() ? true : false
-}
