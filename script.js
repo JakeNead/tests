@@ -1,20 +1,30 @@
-// My first attempt at creating a function to check palindromes
+// Return the oldest person in an array of objects that inclucdes people without a death date
 
-const fibonacci = function(n) {
-  let a = 0
-  let b = 1
-  if (n < 1) {
-      return n
-  } else {
-      for (let i=0; i< +n; i++) {
-        i % 2 === 0 ? b = a+b : a = a+b
-      }
-    return a > b ? a : b;
-  }
-};
-console.log(fibonacci(4))
-console.log(fibonacci(6))
-console.log(fibonacci(25))
+const people = [
+  {
+    name: "Carly",
+    yearOfBirth: 2018,
+  },
+  {
+    name: "Ray",
+    yearOfBirth: 1962,
+    yearOfDeath: 2011,
+  },
+  {
+    name: "Jane",
+    yearOfBirth: 1912,
+    yearOfDeath: 1941,
+  },
+]
 
+const findTheOldest = function(people) {
+  people.forEach(obj => {
+    if (!('yearOfDeath' in obj)) {
+    obj.yearOfDeath = new Date().getFullYear()
+    }
+  })
+  let sorted = people.sort((a, b) => a.yearOfDeath - a.yearOfBirth > b.yearOfDeath-b.yearOfBirth ? -1: 1)
+  return sorted[0]
+}   
 
-  // this is a far better function
+console.table(findTheOldest(people))
