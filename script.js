@@ -1,30 +1,13 @@
-// Return the oldest person in an array of objects that inclucdes people without a death date
+// Return numbers in descending order
 
-const people = [
-  {
-    name: "Carly",
-    yearOfBirth: 2018,
-  },
-  {
-    name: "Ray",
-    yearOfBirth: 1962,
-    yearOfDeath: 2011,
-  },
-  {
-    name: "Jane",
-    yearOfBirth: 1912,
-    yearOfDeath: 1941,
-  },
-]
+function descendingOrder(n){
+  return parseInt(String(n).split('').sort().reverse().join(''))
+}
 
-const findTheOldest = function(people) {
-  people.forEach(obj => {
-    if (!('yearOfDeath' in obj)) {
-    obj.yearOfDeath = new Date().getFullYear()
-    }
-  })
-  let sorted = people.sort((a, b) => a.yearOfDeath - a.yearOfBirth > b.yearOfDeath-b.yearOfBirth ? -1: 1)
-  return sorted[0]
-}   
 
-console.table(findTheOldest(people))
+console.log(descendingOrder(0) === 0)
+console.log(descendingOrder(1) === 1)
+console.log(descendingOrder(111) === 111)
+console.log(descendingOrder(15) === 51)
+console.log(descendingOrder(1021) === 2110)
+console.log(descendingOrder(123456789) === 987654321)
