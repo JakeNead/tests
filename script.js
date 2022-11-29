@@ -1,13 +1,15 @@
-// Return numbers in descending order
-
-function descendingOrder(n){
-  return parseInt(String(n).split('').sort().reverse().join(''))
+function findShort(s){
+  let words = s.split(' ')
+  let shortest = words[0].length
+  for (let i=0; i<words.length; i++) {
+    if (words[i].length<shortest) {
+      shortest = words[i].length
+    }
+  }
+  return shortest
 }
 
 
-console.log(descendingOrder(0) === 0)
-console.log(descendingOrder(1) === 1)
-console.log(descendingOrder(111) === 111)
-console.log(descendingOrder(15) === 51)
-console.log(descendingOrder(1021) === 2110)
-console.log(descendingOrder(123456789) === 987654321)
+console.log(findShort("bitcoin take over the world maybe who knows perhaps"), 3);
+console.log(findShort("turns out random test cases are easier than writing out basic ones"), 3); 
+console.log(findShort("Let's travel abroad shall we"), 2);
