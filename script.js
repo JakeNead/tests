@@ -1,14 +1,13 @@
-// Given two integers find the sum of all the integers between and including them. If they are the same return one of them. 
+// Return true if the first argument passed ends with the second argument
 
-function getSum( a,b ) {
-  let min = Math.min(a, b)
-  let max = Math.max(a, b)
-  return (max-min + 1)*(min + max) / 2
-    }
-  
+function solution(str, ending){
+  let second = String(ending.split(''))
+  let first = String(str.split('').slice(-ending.length))
 
+  return second === first
+}
 
-console.log(getSum(3,3),3)
-console.log(getSum(0,-1),-1)
-console.log(getSum(0,1),1)
-console.log(getSum(-2,7),25)
+console.log(solution('abcde', 'cde')===true)
+console.log(solution('abcde', 'abc')===false)
+console.log(solution('test', 't')===true)
+console.log(solution('aldkfjsdj', 'oasdihi')===false)
