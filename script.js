@@ -1,13 +1,9 @@
-// Return true if the first argument passed ends with the second argument
+function setTheme () {
+  const root = document.documentElement;
+  const newTheme = root.className === 'dark' ? 'light' : 'dark';
+  root.className = newTheme;
 
-function solution(str, ending){
-  let second = String(ending.split(''))
-  let first = String(str.split('').slice(-ending.length))
+  document.querySelector('.theme-name').textContent = newTheme;
 
-  return second === first
+  document.querySelector('.theme-toggle').addEventListener('click', setTheme)
 }
-
-console.log(solution('abcde', 'cde')===true)
-console.log(solution('abcde', 'abc')===false)
-console.log(solution('test', 't')===true)
-console.log(solution('aldkfjsdj', 'oasdihi')===false)
