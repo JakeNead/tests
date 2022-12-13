@@ -8,48 +8,17 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <form>
       <form>
         <fieldset>
-          <legend>Who is your favorite pony?</legend>
-          <ul>
-            <li>
-              <label for="pinkie">Pinkie Pie</label>
-              <input type="radio" name="pony_pinkie" id="pinkie" checked>
-            </li>
-            <li>
-              <label for="rainbow">Rainbow Dash</label>
-              <input type="radio" name="pony_rainbow" id="rainbow">
-            </li>
-            <li>
-              <label for="twilight">Twilight Sparkle</label>
-              <input type="radio" name="pony_twilight" id="twilight">
-            </li>
-          </ul>
-        </fieldset>
-        <fieldset>
-          <legend>Hotdog preferences</legend>
-          <ul>
-            <li>
-              <label for="vegan">Vegan</label>
-              <input type="checkbox" name="Hotdog" id="vegan">
-            </li>
-            <li>
-              <label for="onions">Onions</label>
-              <input type="checkbox" name="Hotdog" id="onions">
-            </li>
-            <li>
-              <label for="tons_of_onions">Tons of onions</label>
-              <input type="checkbox" name="Hotdog" id="tons_of_onions">
-            </li>
-            <li>
-              <label for="too_many_onions">Too many onions</label>
-              <input type="checkbox" name="Hotdog" id="too_many_onions">
-            </li>
-          </ul>
-        </fieldset>
-        <button>Submit</button>
-      </form>
+        <legend>Choose gallery images to upload</legend>
+        <ul>
+          <li>
+            <label for="gallery-img"></label>
+            <input type="file" id="gallery-img" name="gallery-img" accept="image/jpg, image/png" multiple>
+          </li>
+        </ul>
+      <button type="submit">Submit</button>
+    </fieldset>
     </form>
   </body>
 </html>
