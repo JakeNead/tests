@@ -5,28 +5,51 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="style.css">
     <title>My test page</title>
+    <script src="script.js"></script>
   </head>
   <body>
     <form>
-    <fieldset>
-      <Legend><b>Personal information</b></Legend>
-          <label for="name">Name: </label>
-          <input type="text" id="name" name="name">
-        
-          <label for="name">Age:</label>
-          <input type="number" id="age" name="age">
-    </fieldset>
-
-    <fieldset>
-      <Legend><b>Comment information</b></Legend>
-      <label for="comment">Comment:</label>
-      <input type="text" id="comment" name="comment">
-    
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email">
-    </fieldset>
+      <form>
+        <fieldset>
+          <legend>Who is your favorite pony?</legend>
+          <ul>
+            <li>
+              <label for="pinkie">Pinkie Pie</label>
+              <input type="radio" name="pony_pinkie" id="pinkie" checked>
+            </li>
+            <li>
+              <label for="rainbow">Rainbow Dash</label>
+              <input type="radio" name="pony_rainbow" id="rainbow">
+            </li>
+            <li>
+              <label for="twilight">Twilight Sparkle</label>
+              <input type="radio" name="pony_twilight" id="twilight">
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>Hotdog preferences</legend>
+          <ul>
+            <li>
+              <label for="vegan">Vegan</label>
+              <input type="checkbox" name="Hotdog" id="vegan">
+            </li>
+            <li>
+              <label for="onions">Onions</label>
+              <input type="checkbox" name="Hotdog" id="onions">
+            </li>
+            <li>
+              <label for="tons_of_onions">Tons of onions</label>
+              <input type="checkbox" name="Hotdog" id="tons_of_onions">
+            </li>
+            <li>
+              <label for="too_many_onions">Too many onions</label>
+              <input type="checkbox" name="Hotdog" id="too_many_onions">
+            </li>
+          </ul>
+        </fieldset>
+        <button>Submit</button>
+      </form>
     </form>
-
-    
   </body>
 </html>
