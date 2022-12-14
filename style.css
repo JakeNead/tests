@@ -1,99 +1,41 @@
-/* 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-} */
-
-
 body {
   background: grey;
-}
-
-li,ul {
-  list-style: none;
-  display: flex;
-  padding: 0px;
-}
-form {
-  display: flex;
-}
-fieldset {
   display: flex;
   flex-direction: column;
-  margin: 0px;
-  background-color: rgb(211, 207, 183);
-  border-radius: 1em;
-}
-button {
-width: fit-content;
-background-color: grey;
-border-radius: .3em;
+  align-items: center;
+  height: 100vh;
+
+ }
+ .selector-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 3em;
+  padding: 1em;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 1.1em;
+ }
+#price {
+  width: 200px;
 }
 
-legend {
-outline: 2px solid black;
-background-color: rgb(200, 57, 29);
-color: white;
-border-radius: .2em;
+ .selector {
+  display: flex;
+  margin-bottom: 20px;
+}
+output {
+  position: absolute;
+  padding: 3px;
+}
+button {
+  display: block;
+  width: 8rem;
+  font-size: 1.1em;
+
+}
+
+output::before {
+  content: '$';
 }

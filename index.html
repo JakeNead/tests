@@ -4,21 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="style.css">
-    <title>My test page</title>
-    <script src="script.js"></script>
+    <title>Slider Control Test</title>
+    
   </head>
   <body>
-      <form>
-        <fieldset>
-        <legend>Choose gallery images to upload</legend>
-        <ul>
-          <li>
-            <label for="gallery-img"></label>
-            <input type="file" id="gallery-img" name="gallery-img" accept="image/jpg, image/png" multiple>
-          </li>
-        </ul>
-      <button type="submit">Submit</button>
-    </fieldset>
-    </form>
+    <div class="selector-container">
+      <label for="price">Choose a maximum llama price: </label>
+      <div class="selector">
+        <div class="slider">
+          <input
+            type="range"
+            name="price"
+            id="price"
+            min="500"
+            max="80000"
+            step="50"
+            value="500" />
+          <output class="price-output" for="price"></output>
+    </div>
+      </div>
+      <button type="submit">Search</button>
+    </div>
+    
+  <script src="script.js"></script>
   </body>
 </html>

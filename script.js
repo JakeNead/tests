@@ -1,9 +1,9 @@
-function setTheme () {
-  const root = document.documentElement;
-  const newTheme = root.className === 'dark' ? 'light' : 'dark';
-  root.className = newTheme;
+const price = document.querySelector("#price");
+const output = document.querySelector(".price-output");
 
-  document.querySelector('.theme-name').textContent = newTheme;
+output.textContent = price.value;
 
-  document.querySelector('.theme-toggle').addEventListener('click', setTheme)
-}
+price.addEventListener("input", () => {
+  output.textContent = price.value
+});
+
