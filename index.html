@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="style.css">
-    <title>Slider Control Test</title>
-    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="style.css">
+  <title>Date and Time Pickers</title>
   </head>
   <body>
-    <div class="selector-container">
-      <label for="price">Choose a maximum llama price: </label>
-      <div class="selector">
-        <div class="slider">
-          <input
-            type="range"
-            name="price"
-            id="price"
-            min="500"
-            max="80000"
-            step="50"
-            value="500" />
-          <output class="price-output" for="price"></output>
-    </div>
-      </div>
-      <button type="submit">Search</button>
-    </div>
-    
+  <form action="http://httpbin.org/post" method="post">
+    <h3>Edit your preferences</h3>
+    <ul>
+      <li>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+      </li>
+      <li>
+        <label for="url">Website:</label>
+        <input type="url" id="url" name="url">
+      </li>
+      <li>
+        <label for="tel">Phone number:</label>
+        <input type="tel" id="tel" name="tel">
+      </li>
+      <li>
+        <label for="color">Favorite color:</label>
+        <input type="color" id="color" name="fav_color">
+      </li>
+      <li>
+        <button type="submit">Update preferences</button>
+      </li>
+    </ul>
+  </form>
   <script src="script.js"></script>
   </body>
 </html>
