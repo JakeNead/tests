@@ -8,29 +8,16 @@
   </head>
   <body>
   <form action="http://httpbin.org/post" method="post">
-    <h3>Edit your preferences</h3>
-    <ul>
-      <li>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-      </li>
-      <li>
-        <label for="url">Website:</label>
-        <input type="url" id="url" name="url">
-      </li>
-      <li>
-        <label for="tel">Phone number:</label>
-        <input type="tel" id="tel" name="tel">
-      </li>
-      <li>
-        <label for="color">Favorite color:</label>
-        <input type="color" id="color" name="fav_color">
-      </li>
-      <li>
-        <button type="submit">Update preferences</button>
-      </li>
-    </ul>
-  </form>
+    <label for="max-invite">Select the maximum number of invitations</label>
+    <input 
+    type="range"
+    min="1"
+    max="30"
+    value="10"
+    id="max-invite"
+    >
+    <output class="invite-output" >10</output>
+      </form>
   <script src="script.js"></script>
   </body>
 </html>
