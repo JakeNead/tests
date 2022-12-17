@@ -1,72 +1,102 @@
 
+
+:root {
+    --clr: #006194;
+}
+
 body {
-    background-color: #fff;
-    color: #333;
-    font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
-    padding: 1em;
-    margin: 0;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  button,
-  input,
-  select {
-    font-family: inherit;
-    font-size: 100%;
-    padding: 0; margin: 0;
-  }
-
-#search {
-    -webkit-appearance: none;
-    appearance: none;
-    border: 1px solid grey;
-    border-radius: 4px 0px 0px 4px;
-    width: 200px;
-    height: 20px;
-    padding: 10px;
-}
-
-#search:focus,
-#search:hover {
-    outline: none;
-    border: 2px solid black;
-    box-sizing: border-box;
-}
-
-input[type=button] {
-  
-    width: 28px;
-    height: 23px;
-    outline: none;
-    border-radius: 0px 4px 4px 0px;
-    background: url(https://raw.githubusercontent.com/mdn/learning-area/main/html/forms/tasks/advanced-styling/search-24px.png) no-repeat center;
-    background-size: 18px;
-  }
-
-  form {
+    min-height: 100vh;
     display: flex;
+    justify-content: center;
     align-items: center;
-  }
+    font-family: "PT Sans Narrow", sans-serif;
+}
 
-body {
-    background-color: #fff;
-    color: #333;
-    font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
-    padding: 1em;
-    margin: 0;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  button,
-  input,
-  select {
+.form {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    border-radius: 25px;
+    overflow: hidden;
+    width: 70%;
+    max-width: 300px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input,
+.form-button{
     font-family: inherit;
-    font-size: 100%;
-    padding: 0; margin: 0;
-  }
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    border: 0;
+}
+
+.form-input,
+.form-button {
+    padding: 1.5em;
+
+}
+
+.form-input::placeholder {
+    opacity: .55;
+}
+
+.form-input:focus::placeholder {
+    color: var(--clr);
+    opacity: .85;
+    outline: none;
+}
+
+.form-input:focus-visible {
+    outline: none;
+}
+
+.form-item:first-of-type {
+    position: relative;
+}
+
+.form-item:first-of-type::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+.form-button {
+    background: var(--clr);
+    color: white;
+    padding: 1.25em 2.5em;
+}
+
+@media only screen and (min-width: 550px) {
+    .form {
+        flex-direction: row;
+        max-width: 550px;
+        border: 8px solid white;
+        border-radius: 3em;
+    }
+
+    .form-button {
+        border-radius: 3em;
+        margin-left: auto;    
+    }
+
+    .form-item:first-of-type::after {
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        height: initial;
+    }
+    
+}
