@@ -10,15 +10,23 @@
   <body>
 
     <form action="#" class="form">
-      <div class="form-item">
-        <input type="text" class="form-input" placeholder="first name" aria-label="first name">
-      </div>
+      <fieldset>
+      <legend>Are you human?</legend>
 
-      <div class="form-item">
-        <input type="email" class="form-input" placeholder="email" aria-label="email">
+      <div class="option">
+        <input type="radio" id="yes" name="bird_question" value="yes"> 
+        <label for="yes">Yes</label>
       </div>
-
-      <button type="submit" class="form-button">signup</button>
+      <div class="option">
+        <input type="radio" id="no" name="bird_question" value="no"> 
+        <label for="no">No</label>
+      </div>
+      <div class="option">
+        <input type="radio" id="no" name="bird_question" value="maybe"> 
+        <label for="no">Maybe?</label>
+      </div>
+     
+    </fieldset>
     </form>
 
 
