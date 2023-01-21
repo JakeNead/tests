@@ -1,8 +1,14 @@
-function reverseWords (str) {
-  return str.split('').reverse().join('').split(' ').reverse().join(' ')
+function solution(number){
+  let output = 0
+  for (let i=3; i < number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+    output += i
+    }
+  }
+  return output
 }
 
-console.log(reverseWords('The quick brown fox jumps over the lazy dog.') === 'ehT kciuq nworb xof spmuj revo eht yzal .god');
-console.log(reverseWords('apple'), ' = elppa');
-console.log(reverseWords('a b c d'), ' = a b c d');
-console.log(reverseWords('double  spaced  words'), ' = elbuod  decaps  sdrow');
+console.log(solution(10) === 23)
+console.log(solution(27) === 168)
+console.log(solution(645) === 96750)
+console.log(solution(-38) === 0)
