@@ -1,14 +1,17 @@
-function solution(number){
-  let output = 0
-  for (let i=3; i < number; i++) {
-    if (i % 3 === 0 || i % 5 === 0) {
-    output += i
-    }
+function findOdd(a) {
+  let count = 0;
+  for (let i = 0; i <= a.length; i++) {
+    count = 0;
+    for (let j=0; j<= a.length; j++) {
+      if (a[i] === a[j])
+        count += 1;
+        }
+    if (count % 2 !== 0)
+      return a[i]
   }
-  return output
 }
+console.log(`${findOdd([7])} = 7`)
 
-console.log(solution(10) === 23)
-console.log(solution(27) === 168)
-console.log(solution(645) === 96750)
-console.log(solution(-38) === 0)
+console.log(`${findOdd([0])} = 0`)
+console.log(`${findOdd([0,1,0,1,0])} = 0`)
+console.log(`${findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1])} = 4`)
