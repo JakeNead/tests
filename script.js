@@ -1,13 +1,12 @@
-function Book (title, author, pages, hasRead) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.hasRead = hasRead
-  this.info = function () {
-     return `${title} by ${author}, ${pages} pages, ${hasRead ? 'previously read' : 'has not been read yet'}`
-    }
+function order(words){
+return words.split(' ').sort((a,b) => (a.split('').filter(Number)) - (b.split('').filter(Number))).join(' ')
+
 }
-const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', '304', true)
+
+// return words.split(' ').sort((x,y) => x.split('').filter(x => typeof(x)), y.split('').filter(y => typeof(y)))
 
 
-console.log(theHobbit.info())
+console.log(order("is2 Thi1s T4est 3a"), "Thi1s is2 3a T4est")
+console.log(order("4of Fo1r pe6ople g3ood th5e the2"), "Fo1r the2 g3ood 4of th5e pe6ople")
+console.log(order(""), "empty input should return empty string" )
+
