@@ -1,37 +1,24 @@
-function Dog(firstName, size, rating) {
-  this.firstName = firstName;
-  this.size = size;
-  this.rating = rating;
+
+
+
+function Hike (hikeName, state, distance, yds) {
+  const hike = Object.create(Hike.prototype)
+  hike.hikeName = hikeName 
+  hike.state = state
+  hike.distance = distance
+  hike.yds = yds
+  return hike
 }
 
-function sentence () {
-  return `${this.firstName} has a ${this.size} bark`
+Hike.prototype.message = function () {
+  return `${this.hikeName} is ${this.distance} miles long, rated class ${this.yds}, and located in the great state of ${this.state}`
 }
 
-const marty = Object.create(Dog);
+const tableMountain = Hike('Table Mountain', 'Washington', 17, 1)
 
-marty.firstName = 'Marty';
-marty.size = 'big';
-marty.rating = '13/10';
-marty.sentence = sentence();
+const barretSpur = Hike('Barret Spur', 'Oregon', 12, 2)
 
-const sentenceBoundToMarty = sentence.bind(marty)
-
-console.log(sentenceBoundToMarty()); // Marty has a big bark
-
-
-
-// const obj = {
-//   sound: "beep beep"
-// }
-
-// function talk() {
-//     console.log(this.sound)
-// }
-// const boromir = {
-//   sound: 'One does not simply walk into mordor'
-// }
-// const talkBoundToBoromier = talk.bind(boromir)
-
-// talkBoundToBoromier()
-// talk()
+console.log(tableMountain.message())
+console.log(tableMountain.message())
+console.log(barretSpur.distance)
+console.log(barretSpur.hikeName)
