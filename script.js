@@ -1,24 +1,41 @@
+// Code
+// In a factory a printer prints labels for boxes. For one kind of boxes the printer has to use colors which, for the sake of simplicity, are named with letters from a to m.
 
+// The colors used by the printer are recorded in a control string. For example a "good" control string would be aaabbbbhaijjjm meaning that the printer used three times color a, four times color b, one time color h then one time color a...
 
+// Sometimes there are problems: lack of colors, technical malfunction and a "bad" control string is produced e.g. aaaxbbbbyyhwawiwjjjwwm with letters not from a to m.
 
-function Hike (hikeName, state, distance, yds) {
-  const hike = Object.create(Hike.prototype)
-  hike.hikeName = hikeName 
-  hike.state = state
-  hike.distance = distance
-  hike.yds = yds
-  return hike
+// You have to write a function printer_error which given a string will return the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+
+// The string has a length greater or equal to one and contains only letters from ato z.
+
+// wildly verbose first attempt
+function printerError(s) {
+    let errors = 0;
+    const x = s.split('')
+    let i = 0;
+    while (i < x.length) {
+       if (x[i]==='n'||x[i]==='o'||x[i]==='p'||x[i]==='q'||x[i]==='r'||x[i]==='s'||x[i]==='t'||x[i]==='u'||x[i]==='v'||x[i]==='w'||x[i]==='x'||x[i]==='y'||x[i]==='z')
+      errors ++;
+     i++
+      }
+    return `${errors}/${s.length}`
+ }
+ 
+ // refined second attempt
+ function betterPrinterError(s) {
+    // your code
+    let errorCount = 0;
+    for(let i = 0; i < s.length; i++) {
+      if (s[i] > "m") {
+        errorCount++;
+      }
+    }
+    return `${errorCount}/${s.length}`;
 }
 
-Hike.prototype.message = function () {
-  return `${this.hikeName} is ${this.distance} miles long, rated class ${this.yds}, and located in the great state of ${this.state}`
-}
+console.log(printerError("aaabbbbhaijjjm") === '0/14')
+console.log(printerError("aaaxbbbbyyhwawiwjjjwwm")=== '8/22')
 
-const tableMountain = Hike('Table Mountain', 'Washington', 17, 1)
-
-const barretSpur = Hike('Barret Spur', 'Oregon', 12, 2)
-
-console.log(tableMountain.message())
-console.log(tableMountain.message())
-console.log(barretSpur.distance)
-console.log(barretSpur.hikeName)
+console.log(betterPrinterError("aaabbbbhaijjjm") === '0/14')
+console.log(betterPrinterError("aaaxbbbbyyhwawiwjjjwwm")=== '8/22')
