@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tests</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css" class="rel" />
-  </head>
-  <body>
-    <header>
-      <h1>LOGO</h1>
-      <div class="tab">
-        <div class="menu">Menu</div>
-        <ul class="list">
-          <li>One</li>
-          <li>Two</li>
-          <li>Three</li>
-          <li>Four</li>
-          <li>Five</li>
-        </ul>
-      </div>
-      <div class="tab">
-        <div class="Membership">Membership</div>
-        <ul class="list">
-          <li>Bronze</li>
-          <li>Silvef</li>
-          <li>Gold</li>
-          <li>Platinum</li>
-          <li>Neat</li>
-        </ul>
-      </div>
-    </header>
-    <main></main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Test</title>
+</head>
+<body>
+
+  <img src="#">  
+
+  <form action="">
+    <label for="search"></label>
+    <input type="text" name="search" id="search">
+    <button id="searchButton" type="submit">search</button>
+  <button id="refresh">refresh</button>
+  </form>
+
+  <script >
+    const img = document.querySelector('img')
+    const refresh = document.querySelector('#refresh')
+    const form = document.querySelector('form')
+
+    let currentSearch = 'cat'
+
+    function newImage (input) {
+      fetch(`https://api.giphy.com/v1/gifs/translate?api_key=t5oKwFTw6G7hAoYaaIbUhtGAcTDty54I&s=${currentSearch}`, {mode: 'cors'})
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(response){
+      img.src = response.data.images.original.url
+    })
+    .catch(function(err){
+      img.src = fetch('https://api.giphy.com/v1/gifs/translate?api_key=t5oKwFTw6G7hAoYaaIbUhtGAcTDty54I&s=oops', {mode: 'cors'})
+      .then(function(response){
+      return response.json();
+    })
+    .then(function(response){
+      img.src = response.data.images.original.url
+    })
+    })
+    }
+
+    newImage()
+
+    refresh.addEventListener('click', newImage)
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault()
+      currentSearch = search.value
+      newImage()
+    })
+
+  </script>
+
 </body>
+</html>
